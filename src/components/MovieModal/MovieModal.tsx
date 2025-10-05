@@ -28,9 +28,18 @@ function MovieModal({ movie, onClose }: MovieModalProps) {
   }
 
   return createPortal(
-    <div className={css.backdrop} role="dialog" aria-modal="true" onClick={handleBackdropClick}>
+    <div
+      className={css.backdrop}
+      role="dialog"
+      aria-modal="true"
+      onClick={handleBackdropClick}
+    >
       <div className={css.modal}>
-        <button className={css.closeButton} onClick={onClose} aria-label="Close modal">
+        <button
+          className={css.closeButton}
+          onClick={onClose}
+          aria-label="Close modal"
+        >
           &times;
         </button>
         <img
