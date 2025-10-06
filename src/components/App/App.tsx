@@ -10,8 +10,8 @@ import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import MovieModal from "../MovieModal/MovieModal";
 
-import { fetchMovies } from "../../services/movieService";
-import type { MovieResponse, Movie } from "../../types/movie";
+import { fetchMovies, type MovieResponse } from "../../services/movieService";
+import type { Movie } from "../../types/movie";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -24,6 +24,7 @@ function App() {
     enabled: !!query,
     staleTime: 1000 * 60 * 5,
     retry: false,
+    placeholderData: (previousData) => previousData,
   });
 
   useEffect(() => {
